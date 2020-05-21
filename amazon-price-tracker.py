@@ -2,7 +2,7 @@
 
 # Program Name: amazon_price_tracker.py
 # Description:  Track pricing changes for any item on Amazon Canada
-#               They got sneaky and won't allow scraping using the Requests module, so we use Selenium now
+# Note:         They no longer allow us to scrape using the Requests module, so we use Selenium now
 # Created:      2020-05-20
 # Author:       Ricardo Rodrigues
 # Website:      https://github.com/ricardorodrigues-ca/amazon-price-tracker
@@ -14,6 +14,7 @@ from selenium.webdriver.chrome.options import Options
 import locale  # for currency conversion and formatting
 locale.setlocale(locale.LC_ALL, '')
 
+# run Chrome headless so we don't have to manage multiple open windows/tabs
 chrome_options = Options()
 chrome_options.add_argument("--headless")
 driver = webdriver.Chrome(
